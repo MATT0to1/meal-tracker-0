@@ -31,6 +31,7 @@ input,button,select{font-family:inherit;outline:none}
 const { useState, useEffect, useRef } = React;
 
 const KEY = "meal-v6";
+try { localStorage.removeItem("meal-ai-v1"); } catch {}
 const DEF = { monthlyBudget: 1178, dailyLimit: 38, entries: [], recurring: [] };
 function load() { try { const s = localStorage.getItem(KEY); return s ? JSON.parse(s) : DEF; } catch { return DEF; } }
 function save(d) { try { localStorage.setItem(KEY, JSON.stringify(d)); } catch {} }
