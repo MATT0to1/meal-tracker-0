@@ -329,7 +329,7 @@ function CumulativeCard({ cd, cc, co, past, safeDays, overDays, daysElapsed, td,
   const [chartOpen, setChartOpen] = useState(false);
   const show = chartOpen || forceOpen;
   return (
-    <div style={{ ...cardAccent(co ? "rgba(239,68,68,0.35)" : "rgba(22,163,74,0.3)", borderRadius: 14, padding: "10px 13px", marginBottom: 8 }) }}>
+    <div style={{ ...cardAccent(co ? "rgba(239,68,68,0.35)" : "rgba(22,163,74,0.3)", { borderRadius: 14, padding: "10px 13px", marginBottom: 8 }) }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div>
           <div style={{ fontSize: 9, fontWeight: 700, color: "#888", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 3 }}>本月累计盈余</div>
@@ -588,7 +588,7 @@ function InputForm({ data, setData, tspTotal, ms, amortizedDaily, isDesktop }) {
   const p = isDesktop ? 20 : "10px 11px";
   const r = isDesktop ? 16 : 11;
   return (
-    <div style={{ ...cardAccent(sp ? (pd2 >= 0 ? "rgba(22,163,74,0.4)" : "rgba(239,68,68,0.4)") : "rgba(26,23,20,0.1)", borderRadius: r, padding: p }) }}>
+    <div style={{ ...cardAccent(sp ? (pd2 >= 0 ? "rgba(22,163,74,0.4)" : "rgba(239,68,68,0.4)") : "rgba(26,23,20,0.1)", { borderRadius: r, padding: p }) }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: isDesktop ? 14 : 9, minHeight: 16 }}>
         <div style={{ fontSize: isDesktop ? 11 : 9, fontWeight: 700, color: "#888", letterSpacing: "0.1em", textTransform: "uppercase" }}>记录花销</div>
         {sp && <span style={{ fontSize: isDesktop ? 13 : 11, fontWeight: 700, color: gc(pd2), fontVariantNumeric: "tabular-nums" }}>{dl} {pd2 >= 0 ? "还剩" : "超出"} {pd2 >= 0 ? "+" : "-"}¥{Math.abs(pd2).toFixed(2)}</span>}
